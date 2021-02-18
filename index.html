@@ -12,11 +12,42 @@
     <h1>Fundamentos Javascript</h1>
     <script>
         var hola="Hola Mundo";
+        let hello="Hello World"
         console.log(hola)
+        console.log(hello)
+        console.log(window)
+        console.log(window.hola)
+        console.log(window.hello)
+        // - comentario de una linea
+        /*
+        Esto
+        es
+        un
+        comentario
+        de
+        varias
+        lineas
+        */
         // Ámbito de bloque
-        if(){
-            var a = 3;
+        console.log("********var********")
+        var musica = "Rock"
+        console.log("Variable Música antes del Bloque", musica)
+        // Esto es un bloque
+        {
+            var musica = "Pop";
+            console.log("Variable Música antes del Bloque", musica)
         }
+        console.log("Variable Música después del Bloque", musica)
+        // let
+        console.log("********let********")
+        let musica2 = "Rock"
+        console.log("Variable Música antes del Bloque", musica2)
+        // Esto es un bloque
+        {
+            let musica2 = "Pop";
+            console.log("Variable Música antes del Bloque", musica2)
+        }
+        console.log("Variable Música después del Bloque", musica2)        
     </script>
 </body>
 </html>
