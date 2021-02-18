@@ -80,7 +80,7 @@
     </script> -->
 
 
-    <script>
+    <!-- <script>
     // Cadenas de texto
     let nombre ="Jon";
     let apellido = "Mircha";
@@ -100,6 +100,49 @@
         lorem.split(" "),
         lorem.split(", "),
     )
+
+    </script> -->
+
+    <script>
+
+
+        // Template Strings
+
+        let nombre = "Jon";
+        let apellido = "Mircha";
+        
+        // Concatenación
+        let saludo = "Hola mi nombre es " + nombre + " " + apellido + "."
+        console.log(saludo)
+
+        // Interpolación de variables
+        // Template String
+        let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`
+        console.log(saludo2)
+
+        let ul = "<ul><li>Primera</li><li>Verano</li><li>Otoño</li><li>Invierno</li><ul>";
+
+        console.log(ul)
+
+        let ul2 = `
+        <ul>
+            <li>Primera</li>
+            <li>Verano</li>
+            <li>Otoño</li>
+            <li>Invierno</li>
+        <ul>
+        `
+        console.log(ul2)
+
+        let ul3 = "<ul>";
+            ul3 += "<li>Primera</li>"
+            ul3 += "<li>Verano</li>"
+            ul3 += "<li>Otoño</li>"
+            ul3 += "<li>Invierno</li>"
+            ul3 = "<ul>";
+
+        
+        
 
     </script>
 
