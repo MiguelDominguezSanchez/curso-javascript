@@ -184,7 +184,7 @@
 
     </script> -->
 
-    <script>
+    <!-- <script>
         // undefined indica que no se ha inicializado 
         // una variable y  que el valor está ausente
         let indefinida;
@@ -198,6 +198,78 @@
         // NaN - Not a Number
         let noEsUnNumero = "hola" * 3.7;
         console.log(noEsUnNumero)
+
+    </script> -->
+
+    <script>
+
+        /*
+        Una función es un bloque de código,
+        autocontenido, que se puede definir una
+        vez y ejecutar en cualquier momento.
+        Opcionalmente, una función puede aceptar
+        parámetros y devolver un valor.
+
+        Las funciones en Javascript son objectos,
+        un tipo especial de objetos:
+
+        Se dice que las funciones son ciudadanos
+        de primera clase porque pueden asignarse a 
+        un valor, y pueden pasarse como argumentos
+        y usarse como valor de retorno.
+        */ 
+
+        // Función Declarada
+        // function estoEsUnaFuncion(){
+        //     console.log("Uno")
+        //     console.log("Dos")
+        //     console.log("Tres")
+        // }
+
+        function unaFuncionQueDevuelveValor() {
+            console.log("Uno")
+            return 19
+            console.log("Dos")
+            console.log("Tres")
+            return "La función ha retornado una cadena de texto"
+        }
+
+        // Invocación de funciones
+        // estoEsUnaFuncion()
+        // estoEsUnaFuncion()
+        // estoEsUnaFuncion()
+        // estoEsUnaFuncion()
+
+        // let valorDeFuncion = unaFuncionQueDevuelveValor()
+
+        // console.log(valorDeFuncion)
+
+        function saludar(nombre="Desconocido", edad=0){
+            console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`)
+        }
+
+        saludar("kEnAi", 7)
+        saludar()
+
+        // Funciones declaradas VS funciones expresadas
+
+        funcionDeclarada()
+
+        function funcionDeclarada(){
+            console.log("Esto es una función declarada puede invocarse en cualquier parte de nuestro código, incluso antes de que  la función sea declarada")
+        }
+
+        funcionDeclarada()
+
+        // funcionExpresada()
+
+        // Función anónima
+        // const funcionExpresada = () => {} arrow function
+        const funcionExpresada = function(){
+            console.log("Esto es una función expresada, es decir una función que se la ha asignado como valor a una variable. Si invocamos esta función antes de su definición, Javascript nos dirá...'Uncaught ReferenceError: can't access lexical declaration 'funcionExpresada' before initialization'")
+        }
+
+        funcionExpresada()
 
     </script>
 
