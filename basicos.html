@@ -646,7 +646,7 @@
 
        </script> -->
 
-       <script>
+       <!-- <script>
 
         //    let {nombre,edad, apellido} = props
 
@@ -672,23 +672,34 @@
         let{nombre, edad, apellido} = persona
         console.log(nombre, apellido, edad)
 
+       </script> -->s
 
+       <script>
+           let nombre = "kEnAi"
+           edad = 7;
 
+            const perro = {
+                nombre: nombre,
+                edad: edad,
+                ladrar: function(){
+                    console.log("guauu guauuu!!")
+                }
+            }
 
+            console.log(perro)
+            perro.ladrar()
 
+            const dog = {
+                nombre,
+                edad,
+                raza: 'Callejero',
+                ladrar(){
+                    console.log('guauu guauu guauuu!!')
+                }
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-
+            console.log(dog)
+            dog.ladrar()
 
        </script>
 
