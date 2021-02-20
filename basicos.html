@@ -10,6 +10,8 @@
 <body>
     <h1>Fundamentos Javascript</h1>
 
+    <!-- Further thoroughly note taking -->
+
     <!-- <script>
         var hola="Hola Mundo";
         let hello="Hello World"
@@ -702,7 +704,7 @@
             dog.ladrar()
 
        </script> -->
-
+<!-- 
        <script>
 
            function sumar (a,b,...c){
@@ -734,6 +736,128 @@
            console.log(arr3)
 
 
+       </script> -->
+
+       <script>
+
+        // Función expresada
+        // a una variable le asignas el valor 
+        // de una función anónima
+        // si todavía no has declarado 
+        // la función expresada no puedo invocarla
+
+        //    const saludar = function(){
+        //        console.log("Hola")
+        //    }
+
+        //    saludar()
+        
+        // Función declarada
+        // la invocación puede ser 
+        // incluso antes de que la ia función
+        // esté declarada, 
+        // por que javascript hace 
+        // este proceso de hoisting en las funciones
+        //    function saludar(){
+            //        console.log("Hola")
+            //    }
+            
+            //    saludar()
+            
+        // Arrow function
+        // const saludar = () => {
+        //     console.log("Hola")
+        // }
+    
+        // saludar()
+
+        // // Una sola linea de instrucción
+        // // puedo omitir las llaves
+        // // más expresivo
+        // const saludar = () => console.log("Hola")
+    
+        // saludar()
+        
+        // const saludar = (nombre) => console.log("Hola ${nombre}")
+    
+        // saludar("Irma")
+        
+        // cuando una función flecha 
+        // recibe un parámetro 
+        // ya no es necesario poner los paréntesis
+        // queda muy expresiva
+        // esto es un return implícito
+        const saludar = nombre => console.log("Hola ${nombre}")
+        saludar("Irma")
+
+        // 
+
+        // const sumar = function(a,b){
+        //     return a +b;
+        // }
+
+        // console.log(sumar(8,9))
+        
+        // Todavía más expresiva
+        const sumar = (a,b) => a +b;
+    
+        console.log(sumar(9,9))
+
+        const funcionDeVariasLineas = () => {
+            console.log("Uno")
+            console.log("Dos")
+            console.log("Tres")
+        }
+
+        funcionDeVariasLineas()
+
+        const numeros = [1,2,3,4,5]
+
+        numeros.forEach(function(el,index){
+            console.log(`El elemento ${el} está en la posición ${index}`)
+        })
+        // Arrow function
+        numeros.forEach((el,index) => {
+            console.log(`${el} está en la posición ${index}`)
+        })
+        
+        // Arrow function una sola línea
+        numeros.forEach((el,index) => console.log(`${el} está en la posición ${index}`))
+
+        // function Perro() {
+        //     console.log(this)
+        // }
+
+        // Perro()
+
+        // const perro={
+        //     nombre:"kenai",
+        //     ladrar: function(){
+        //         console.log(this)
+        //     }
+        // }
+
+        // perro.ladrar()
+        
+        // const perro={
+        //     nombre:"kenai",
+        //     ladrar:()=>{
+        //         console.log(this)
+        //     }
+        // }
+
+        // perro.ladrar()
+        
+        // Método en objeto literal
+        // nueva sintaxis expresión
+        const perro={
+            nombre:"kenai",
+            ladrar(){
+                console.log(this)
+            }
+        }
+
+        perro.ladrar()
        </script>
 
 </body>
