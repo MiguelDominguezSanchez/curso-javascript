@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.png" type="image/gif" sizes="16x16"> 
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+// 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+// function contarCaracteres(cadena=""){
+//     if(!cadena){
+// console.warn("No ingresaste ninguna cadena")
+//     }else{
+// console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`)
+//     }
+// }
+const contarCaracteres = (cadena="") => 
+(!cadena)
+?console.warn("No ingresaste ninguna cadena")
+:console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`)
+
+
+// contarCaracteres()
+// contarCaracteres("Hola Mundo")
+
+// 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+const recortarTexto = (cadena="", longitud= undefined)=>
+(!cadena)
+? console.warn("No ingresaste el texto")
+:(longitud === undefined)
+?console.warn("No ingresaste la longitud para recortar el texto")
+:console.info(cadena.slice(0,longitud))
+
+// recortarTexto("Hola Mundo", 4)
+// recortarTexto()
+// recortarTexto("Hola Hola")
+// recortarTexto("",5)
+
+// 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+const cadenaAArreglo = (cadena="", separador = undefined)=>
+(!cadena)
+? console.warn("No ingresaste una cadena de texto")
+:(separador === undefined)
+?console.warn("No ingresaste el caracter separador")
+:console.info(cadena.split(separador))
+
+// cadenaAArreglo("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut tortor sodales eros viverra egestas et eget odio. Integer tempor congue tempor. Nullam lacinia quam semper sem consequat, nec semper metus facilisis. Morbi in dui finibus, lacinia orci ut, condimentum velit. Ut vehicula justo dui, nec molestie elit fermentum vel. Vivamus pellentesque hendrerit neque, at facilisis urna dictum vitae. Sed dignissim quam mattis, vehicula nunc eget, sagittis nunc. Nam lacinia commodo posuere. Duis iaculis quis urna vehicula egestas. Phasellus sodales nibh sit amet justo ornare venenatis. Mauris luctus ipsum eu risus faucibus, et maximus purus sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."," ")
+// cadenaAArreglo("Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic", ",")
+// cadenaAArreglo()
+// cadenaAArreglo("Hola Mundo")
+// cadenaAArreglo("","-")
+
+
+
+
+
+
+// 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+const repetirTexto=(texto="",veces=undefined)=>{
+    if (!texto) return console.warn("No ingresaste un texto")
+
+    if(veces===undefined) return console.warn("No ingresaste el número de veces a repetir el texto")
+
+    if(veces===0) return console.error("El número de veces no puedes ser 0")
+
+    if(Math.sign(veces)=== -1)return console.error("El número de veces no puede ser negativo")
+
+    for (let i= 1; i<=veces;i++) console.info(`${texto},${i}`)
+    
+}
+
+repetirTexto("Hola Mundo", 3)
+repetirTexto("Hola Mundo", 0)
+repetirTexto("Hola Mundo", -20)
+repetirTexto("", 20)
+repetirTexto("Hola Mundo")
+
+
+
+
+
+// 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+
+// const invertirCadena = (cadena = "")=>
+// (!cadena)
+// ? console.warn("No ingresaste una caden de texto")
+// : console.info(cadena.split("").reverse().join(""))
+
+// invertirCadena()
+// invertirCadena("Hola Mundo")
+// invertirCadena("Javascript es un lenguaje de programación increible")
+// invertirCadena("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut tortor sodales eros viverra egestas et eget odio. Integer tempor congue tempor. Nullam lacinia quam semper sem consequat, nec semper metus facilisis. Morbi in dui finibus, lacinia orci ut, condimentum velit. Ut vehicula justo dui, nec molestie elit fermentum vel. Vivamus pellentesque hendrerit neque, at facilisis urna dictum vitae. Sed dignissim quam mattis, vehicula nunc eget, sagittis nunc. Nam lacinia commodo posuere. Duis iaculis quis urna vehicula egestas. Phasellus sodales nibh sit amet justo ornare venenatis. Mauris luctus ipsum eu risus faucibus, et maximus purus sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos")
+
+// 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+
+// 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+
+// 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
