@@ -19,22 +19,22 @@
 // console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`)
 //     }
 // }
-const contarCaracteres = (cadena="") => 
-(!cadena)
-?console.warn("No ingresaste ninguna cadena")
-:console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`)
+// const contarCaracteres = (cadena="") => 
+// (!cadena)
+// ?console.warn("No ingresaste ninguna cadena")
+// :console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`)
 
 
 // contarCaracteres()
 // contarCaracteres("Hola Mundo")
 
 // 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
-const recortarTexto = (cadena="", longitud= undefined)=>
-(!cadena)
-? console.warn("No ingresaste el texto")
-:(longitud === undefined)
-?console.warn("No ingresaste la longitud para recortar el texto")
-:console.info(cadena.slice(0,longitud))
+// const recortarTexto = (cadena="", longitud= undefined)=>
+// (!cadena)
+// ? console.warn("No ingresaste el texto")
+// :(longitud === undefined)
+// ?console.warn("No ingresaste la longitud para recortar el texto")
+// :console.info(cadena.slice(0,longitud))
 
 // recortarTexto("Hola Mundo", 4)
 // recortarTexto()
@@ -42,12 +42,12 @@ const recortarTexto = (cadena="", longitud= undefined)=>
 // recortarTexto("",5)
 
 // 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
-const cadenaAArreglo = (cadena="", separador = undefined)=>
-(!cadena)
-? console.warn("No ingresaste una cadena de texto")
-:(separador === undefined)
-?console.warn("No ingresaste el caracter separador")
-:console.info(cadena.split(separador))
+// const cadenaAArreglo = (cadena="", separador = undefined)=>
+// (!cadena)
+// ? console.warn("No ingresaste una cadena de texto")
+// :(separador === undefined)
+// ?console.warn("No ingresaste el caracter separador")
+// :console.info(cadena.split(separador))
 
 // cadenaAArreglo("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut tortor sodales eros viverra egestas et eget odio. Integer tempor congue tempor. Nullam lacinia quam semper sem consequat, nec semper metus facilisis. Morbi in dui finibus, lacinia orci ut, condimentum velit. Ut vehicula justo dui, nec molestie elit fermentum vel. Vivamus pellentesque hendrerit neque, at facilisis urna dictum vitae. Sed dignissim quam mattis, vehicula nunc eget, sagittis nunc. Nam lacinia commodo posuere. Duis iaculis quis urna vehicula egestas. Phasellus sodales nibh sit amet justo ornare venenatis. Mauris luctus ipsum eu risus faucibus, et maximus purus sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."," ")
 // cadenaAArreglo("Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic", ",")
@@ -61,24 +61,24 @@ const cadenaAArreglo = (cadena="", separador = undefined)=>
 
 
 // 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
-const repetirTexto=(texto="",veces=undefined)=>{
-    if (!texto) return console.warn("No ingresaste un texto")
+// const repetirTexto=(texto="",veces=undefined)=>{
+//     if (!texto) return console.warn("No ingresaste un texto")
 
-    if(veces===undefined) return console.warn("No ingresaste el número de veces a repetir el texto")
+//     if(veces===undefined) return console.warn("No ingresaste el número de veces a repetir el texto")
 
-    if(veces===0) return console.error("El número de veces no puedes ser 0")
+//     if(veces===0) return console.error("El número de veces no puedes ser 0")
 
-    if(Math.sign(veces)=== -1)return console.error("El número de veces no puede ser negativo")
+//     if(Math.sign(veces)=== -1)return console.error("El número de veces no puede ser negativo")
 
-    for (let i= 1; i<=veces;i++) console.info(`${texto},${i}`)
+//     for (let i= 1; i<=veces;i++) console.info(`${texto},${i}`)
     
-}
+// }
 
-repetirTexto("Hola Mundo", 3)
-repetirTexto("Hola Mundo", 0)
-repetirTexto("Hola Mundo", -20)
-repetirTexto("", 20)
-repetirTexto("Hola Mundo")
+// repetirTexto("Hola Mundo", 3)
+// repetirTexto("Hola Mundo", 0)
+// repetirTexto("Hola Mundo", -20)
+// repetirTexto("", 20)
+// repetirTexto("Hola Mundo")
 
 
 
@@ -97,12 +97,62 @@ repetirTexto("Hola Mundo")
 // invertirCadena("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut tortor sodales eros viverra egestas et eget odio. Integer tempor congue tempor. Nullam lacinia quam semper sem consequat, nec semper metus facilisis. Morbi in dui finibus, lacinia orci ut, condimentum velit. Ut vehicula justo dui, nec molestie elit fermentum vel. Vivamus pellentesque hendrerit neque, at facilisis urna dictum vitae. Sed dignissim quam mattis, vehicula nunc eget, sagittis nunc. Nam lacinia commodo posuere. Duis iaculis quis urna vehicula egestas. Phasellus sodales nibh sit amet justo ornare venenatis. Mauris luctus ipsum eu risus faucibus, et maximus purus sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos")
 
 // 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+const textoEnCadena = (cadena="",texto="")=>{
+    if  (!cadena) return console.warn("No ingresaste el texto largo")
+
+    if (!texto) return console.warn("No ingresaste la palabra evaluar")
+
+    let i=0,
+        contador=0;
+
+        while(i!==-1){
+            i=cadena.indexOf(texto,i)
+            if(i!==-1){
+                i++
+                contador++
+            }
+        }
+        return console.info(`La palabra ${texto} se repite ${contador} veces`)
+}
+
+// textoEnCadena()
+// textoEnCadena("", "mundo")
+// textoEnCadena("hola mundo adios mundo")
+// textoEnCadena("hola mundo adios mundo yolo mundo holi mundo chao mundo", "mundo")
+// textoEnCadena("hola mundo adios mundo", "mundo")
 
 // 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+const palindromo = (palabra = "") => {
+    if (!palabra) return console.warn("No ingresaste una palabra o frase")
 
-// 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+    palabra= palabra.toLowerCase()
+    let alReves = palabra.split("").reverse().join("")
+
+    return(palabra===alReves)
+    ?console.info(`Sí es palindromo, Palabra original ${palabra}, Palabra al revés ${alReves}`)
+    :console.info(`No es palindromo, Palabra original ${palabra}, Palabra al reves ${alReves}`)
+}
+
+// palindromo()
+// palindromo("hola Mundo")
+// palindromo("Salas")
+
+// // 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+const eliminarCaracteres = (texto="", patron="")=>
+(!texto)
+?console.warn("No ingresaste un texto")
+:(!patron)
+?console.warn("No ingrresaste un patrón de caracteres")
+:console.info(texto.replace(new RegExp(patron,"ig"),""))
+
+eliminarCaracteres()
+eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5")
+eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5","xy")
+eliminarCaracteres("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut tortor sodales eros viverra egestas et eget odio. Integer tempor congue tempor. Nullam lacinia quam semper sem consequat, nec semper metus facilisis. Morbi in dui finibus, lacinia orci ut, condimentum velit. Ut vehicula justo dui, nec molestie elit fermentum vel. Vivamus pellentesque hendrerit neque, at facilisis urna dictum vitae. Sed dignissim quam mattis, vehicula nunc eget, sagittis nunc. Nam lacinia commodo posuere. Duis iaculis quis urna vehicula egestas. Phasellus sodales nibh sit amet justo ornare venenatis. Mauris luctus ipsum eu risus faucibus, et maximus purus sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.","[a-z]")
     
-    
+// 9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+// 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+// 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
     
     
     
