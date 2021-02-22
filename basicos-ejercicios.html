@@ -386,113 +386,193 @@
 
 
 
-// 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
-const contarLetras = (cadena="")=>{
-    if(!cadena) return console.warn("No ingresaste una cadena de texto")
+// // 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+// const contarLetras = (cadena="")=>{
+//     if(!cadena) return console.warn("No ingresaste una cadena de texto")
 
-    if(typeof cadena!== "string") return console.error(`El valor "${cadena}" ingresado, NO es una cadena de texto`)
+//     if(typeof cadena!== "string") return console.error(`El valor "${cadena}" ingresado, NO es una cadena de texto`)
 
-    let vocales = 0,
-    consonantes = 0;
+//     let vocales = 0,
+//     consonantes = 0;
 
-    cadena = cadena.toLocaleLowerCase()
+//     cadena = cadena.toLocaleLowerCase()
 
-    for (let letra of cadena){
-        if(/[aeiouáéíóúü]/.test(letra)) vocales++;
+//     for (let letra of cadena){
+//         if(/[aeiouáéíóúü]/.test(letra)) vocales++;
         
-        if(/[bcdfghijklmñnopqrstuvwxyz]/.test(letra)) consonantes++;
+//         if(/[bcdfghijklmñnopqrstuvwxyz]/.test(letra)) consonantes++;
+//     }
+
+//     return console.info({
+//         cadena,
+//         vocales,
+//         consonantes
+//     })
+
+// }
+
+// // contarLetras()
+// // contarLetras(3)
+// // contarLetras("Hola Mundo")
+// // contarLetras("Ñoño")
+// // contarLetras("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut tortor sodales eros viverra egestas et eget odio. Integer tempor congue tempor. Nullam lacinia quam semper sem consequat, nec semper metus facilisis. Morbi in dui finibus, lacinia orci ut, condimentum velit. Ut vehicula justo dui, nec molestie elit fermentum vel. Vivamus pellentesque hendrerit neque, at facilisis urna dictum vitae. Sed dignissim quam mattis, vehicula nunc eget, sagittis nunc. Nam lacinia commodo posuere. Duis iaculis quis urna vehicula egestas. Phasellus sodales nibh sit amet justo ornare venenatis. Mauris luctus ipsum eu risus faucibus, et maximus purus sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.  ")
+
+
+
+
+// // 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+// const validarNombre = (nombre="")=>{
+//     if(!nombre) return console.warn("No ingresaste un nombre")
+
+//     if(typeof nombre !== "string") return console.error(`El valor "${nombre}" ingresado, NO es una cadena de texto`)
+
+//     let expReg=/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g.test(nombre)
+
+//     return (expReg)
+//     ? console.info(`"${nombre}", es un nombre válido`)
+//     :console.warn(`"${nombre}", NO es un nombre válido`)
+    
+// }
+
+// // validarNombre()
+// // validarNombre(3)
+// // validarNombre("Jonathan MirCha")
+// // validarNombre("Jonathan MirCha,19")
+
+
+
+
+// // 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+// const validarEmail = (email="")=>{
+//     if(!email) return console.warn("No ingresaste un email")
+
+//     if(typeof email !== "string") return console.error(`El valor "${email}" ingresado, NO es una cadena de texto`)
+
+//     let expReg = /[a-z0-9]+(\[_a-z0-9]+)*@[a-z0-9]+(\.[a-z]{2,15})/i.test(email)
+
+//     return (expReg)
+//     ? console.info(`"${email}", es un email válido`)
+//     :console.warn(`"${email}", NO es un email válido`)
+    
+// }
+
+// // validarEmail()
+// // validarEmail(34)
+// // validarEmail("jon,mir,cha@gmail")
+// // validarEmail("jonmircha@gmail.com")
+
+// // Fusión 19 y 20
+// const validarPatron = (cadena="", patron=undefined)=>{
+//     if(!cadena) return console.warn("No ingresaste una ccadena de texto a evaluar")
+
+//     if(typeof cadena !== "string") return console.error(`El valor "${cadena}" ingresado, NO es una cadena de texto`)
+    
+//     if(patron===undefined) return console.warn("No ingresaste un patrón a evaluar")
+
+//     if(!(patron instanceof RegExp)) return console.error(`El valor "${patron}" ingresado, NO es una expresión regular`)
+
+//     let expReg = patron.test(cadena)
+
+//     return (expReg)
+//     ? console.info(`"${cadena}", cumple con el patrón ingresado`)
+//     :console.warn(`"${cadena}", NO cumple con el patrón ingresado`)
+    
+// }
+
+// // validarPatron()
+// // validarPatron({})
+// // validarPatron("Hola Mundo")
+// // validarPatron({})
+// // validarPatron("Hola Mundo")
+// // validarPatron("Hola Mundo","hola")
+// // validarPatron("Hola Mundo",[1,2,3])
+// // validarPatron("Jonathan Mircha", /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g)
+// // validarPatron("Jonathan Mircha 19", /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g)
+// // validarPatron("jonmircha@gmail", new RegExp("/[a-z0-9]+(\[_a-z0-9]+)*@[a-z0-9]+(\.[a-z]{2,15})/","i"))
+// // validarPatron("jonmircha@gmail.com", new RegExp("[a-z0-9]+(\[_a-z0-9]+)*@[a-z0-9]+(\.[a-z]{2,15})","i"))
+
+// 21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+
+const devolverCuadrados = (arr=undefined)=>{
+    if (arr=== undefined) return console.warn("No ingresaste un arreglo de números")
+
+    if(!(arr instanceof Array)) return console.error("El valor que ingresaste no es un arreglo")
+
+    if (arr.length===0) return console.error("El arreglo está vacío")
+
+    for (let num of arr){
+        if(typeof num !== "number") return console.error(`El valor "${num}" ingresado, NO es un número`)
+        
+    }
+
+    const newArr = arr.map(el => el*el)
+
+    return console.info(`Arreglo original: ${arr},\nArrreglo elevado al cuadrado: ${newArr}`)
+}
+
+// devolverCuadrados()
+// devolverCuadrados(true)
+// devolverCuadrados({})
+// devolverCuadrados([])
+// devolverCuadrados([1,"3",4,{}])
+// devolverCuadrados([1,4,{}])
+// devolverCuadrados([1,4,8])
+
+// 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+const arrayMinMax = (arr=undefined)=>{
+    if (arr=== undefined) return console.warn("No ingresaste un número de arreglos")
+
+    if(!(arr instanceof Array)) return console.error("El valor que ingresaste no es un arreglo")
+
+    if (arr.length===0) return console.error("El arreglo está vacío")
+
+    for (let num of arr){
+        if(typeof num !== "number") return console.error(`El valor "${num}" ingresado, NO es un número`)
+        
+    }
+
+    return console.info(`Arreglo original: ${arr},\nValor mayor: ${Math.max(...arr)},\nValor menor:${Math.min(...arr)}`)
+}
+
+// arrayMinMax()
+// arrayMinMax(false)
+// arrayMinMax([])
+// arrayMinMax([2,3,true])
+// arrayMinMax([1,4,5,99,-60])
+
+
+
+// 23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+const separarParesImpares = (arr=undefined)=>{
+    if (arr=== undefined) return console.warn("No ingresaste un número de arreglos")
+
+    if(!(arr instanceof Array)) return console.error("El valor que ingresaste no es un arreglo")
+
+    if (arr.length===0) return console.error("El arreglo está vacío")
+
+    for (let num of arr){
+        if(typeof num !== "number") return console.error(`El valor "${num}" ingresado, NO es un número`)
+        
     }
 
     return console.info({
-        cadena,
-        vocales,
-        consonantes
+        pares: arr.filter(num=>num%2===0),
+        impares: arr.filter(num=>num%2===1)
     })
-
 }
 
-// contarLetras()
-// contarLetras(3)
-// contarLetras("Hola Mundo")
-// contarLetras("Ñoño")
-// contarLetras("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut tortor sodales eros viverra egestas et eget odio. Integer tempor congue tempor. Nullam lacinia quam semper sem consequat, nec semper metus facilisis. Morbi in dui finibus, lacinia orci ut, condimentum velit. Ut vehicula justo dui, nec molestie elit fermentum vel. Vivamus pellentesque hendrerit neque, at facilisis urna dictum vitae. Sed dignissim quam mattis, vehicula nunc eget, sagittis nunc. Nam lacinia commodo posuere. Duis iaculis quis urna vehicula egestas. Phasellus sodales nibh sit amet justo ornare venenatis. Mauris luctus ipsum eu risus faucibus, et maximus purus sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.  ")
+separarParesImpares()
+separarParesImpares("hola")
+separarParesImpares([])
+separarParesImpares([2,4,"j"])
+separarParesImpares([1,2,3,4,5,6,7,8,9,0])
 
 
 
 
-// 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
-const validarNombre = (nombre="")=>{
-    if(!nombre) return console.warn("No ingresaste un nombre")
-
-    if(typeof nombre !== "string") return console.error(`El valor "${nombre}" ingresado, NO es una cadena de texto`)
-
-    let expReg=/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g.test(nombre)
-
-    return (expReg)
-    ? console.info(`"${nombre}", es un nombre válido`)
-    :console.warn(`"${nombre}", NO es un nombre válido`)
-    
-}
-
-// validarNombre()
-// validarNombre(3)
-// validarNombre("Jonathan MirCha")
-// validarNombre("Jonathan MirCha,19")
-
-
-
-
-// 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
-const validarEmail = (email="")=>{
-    if(!email) return console.warn("No ingresaste un email")
-
-    if(typeof email !== "string") return console.error(`El valor "${email}" ingresado, NO es una cadena de texto`)
-
-    let expReg = /[a-z0-9]+(\[_a-z0-9]+)*@[a-z0-9]+(\.[a-z]{2,15})/i.test(email)
-
-    return (expReg)
-    ? console.info(`"${email}", es un email válido`)
-    :console.warn(`"${email}", NO es un email válido`)
-    
-}
-
-// validarEmail()
-// validarEmail(34)
-// validarEmail("jon,mir,cha@gmail")
-// validarEmail("jonmircha@gmail.com")
-
-// Fusión 19 y 20
-const validarPatron = (cadena="", patron=undefined)=>{
-    if(!cadena) return console.warn("No ingresaste una ccadena de texto a evaluar")
-
-    if(typeof cadena !== "string") return console.error(`El valor "${cadena}" ingresado, NO es una cadena de texto`)
-    
-    if(patron===undefined) return console.warn("No ingresaste un patrón a evaluar")
-
-    if(!(patron instanceof RegExp)) return console.error(`El valor "${patron}" ingresado, NO es una expresión regular`)
-
-    let expReg = patron.test(cadena)
-
-    return (expReg)
-    ? console.info(`"${cadena}", cumple con el patrón ingresado`)
-    :console.warn(`"${cadena}", NO cumple con el patrón ingresado`)
-    
-}
-
-validarPatron()
-validarPatron({})
-validarPatron("Hola Mundo")
-validarPatron({})
-validarPatron("Hola Mundo")
-validarPatron("Hola Mundo","hola")
-validarPatron("Hola Mundo",[1,2,3])
-validarPatron("Jonathan Mircha", /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g)
-validarPatron("Jonathan Mircha 19", /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g)
-validarPatron("jonmircha@gmail", new RegExp("/[a-z0-9]+(\[_a-z0-9]+)*@[a-z0-9]+(\.[a-z]{2,15})/","i"))
-validarPatron("jonmircha@gmail.com", new RegExp("[a-z0-9]+(\[_a-z0-9]+)*@[a-z0-9]+(\.[a-z]{2,15})","i"))
-
-
-
+// 24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+// 25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+// 26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
 
 
 
