@@ -11,8 +11,11 @@
 <body>
 
     <h1>Nuevos Tipos de Javascript</h1>
+    <p>lorem</p>
+    <p>lorem</p>
+    <p>lorem</p>
 
-    <script>
+    <!-- <script>
 
     // 52. WeakSets & EakMaps
 
@@ -79,6 +82,42 @@
         llave2 = null
         llave3 = null
     }, 5000)
+
+    </script> -->
+
+    <script>
+
+        // 53. Iterables e Iterators
+
+        const iterable = [1,2,3,4,5]
+        // const iterable = new Set ([1,2,3,3,3,4,5,6,6])
+        // const iterable = "Hola Mundo"
+        // const iterable = new Map((["nombre", "jon"],["edad", 35]));
+        
+        
+        // Accedemos al iterador del iterable
+        const iterador = iterable[Symbol.iterator]()
+
+        console.log(iterable)
+        console.log(iterador)
+        // console.log(iterador.next())
+        // console.log(iterador.next())
+        // console.log(iterador.next())
+        // console.log(iterador.next())
+        // console.log(iterador.next())
+        // console.log(iterador.next())
+
+        let next = iterador.next()
+
+        while(!next.done){
+            console.log(next.value)
+            next = iterador.next()
+        }
+
+
+
+
+
 
     </script>
     
