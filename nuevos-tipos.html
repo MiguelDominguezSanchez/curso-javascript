@@ -213,7 +213,7 @@
 
     </script> -->
 
-    <script>
+    <!-- <script>
 
         // 56. Propiedades dinámicas de los objetos
 
@@ -229,6 +229,69 @@
 
         console.log(objUsuarios)
         
+
+    </script> -->
+
+    <script>
+
+        // 57. This
+
+        console.log(this)
+        console.log(window)
+        console.log(this=== window)
+
+        this.nombre = "Contexto Global"
+        console.log(this.nombre)
+        
+        function imprimir(){
+            console.log(this.nombre)
+        }
+
+        imprimir()
+
+        const obj = {
+            nombre: "Contexto Objeto",
+            imprimir: function(){
+                console.log(this.nombre)
+            }
+        }
+        
+        obj.imprimir()
+
+        const obj2 = {
+            nombre: "Contexto Objeto 2",
+            imprimir: imprimir
+        }
+        
+        obj2.imprimir()
+        
+        const obj3 = {
+            nombre: "Contexto Objeto 3",
+            imprimir: ()=>{
+                console.log(this.nombre)
+            }
+        }
+
+        obj3.imprimir()
+
+        function Persona (nombre){
+            const that = this
+            // this.nombre = nombre
+            that.nombre = nombre
+
+            // return console.log(this.nombre)
+            // return function(){
+            //     console.log(this.nombre, 22 )
+            // }
+            // return()=> console.log(this.nombre)
+
+            return function(){
+                console.log(that.nombre, 33)
+            }
+        }
+
+        let jon = new Persona("Jon")
+        jon()
 
     </script>
     
