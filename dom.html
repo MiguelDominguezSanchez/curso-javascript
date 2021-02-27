@@ -9,6 +9,40 @@
 </head>
 <body>
     <h1>WEB APIs</h1>
+    <style>
+        :root{
+            --yellow-color: #F7DF1E;
+            --dark-color: #222;
+        }
+
+        .card {
+            display: inline-block;
+            background-color: var(--dark-color);
+            color: var(--yellow-color);
+        }
+
+        .card figcaption {
+            padding: 1rem;
+        } 
+
+        .rotate-45 {
+            transform: rotate(45deg);
+        }
+
+        .rotate-135 {
+            transform: rotate(135deg);
+        }
+
+        .opacity-80 {
+            opacity: .8
+        }
+
+        .sepia {
+            filter: sepia(1);
+        }
+
+        
+    </style>
     <h2>DOM: Document Object Model</h2>
     <h2>BOM: Browser Object Model</h2>
     <h2>CSSOM: CSS Object Model</h2>
@@ -41,7 +75,7 @@
         </ul>
     </nav>
     <input type="text" name="nombre" placeholder="Nombre">
-    <a class="link-dom" href="dom.html" data-description="Document Object Model">DOM</a>
+    <a class="link-dom" href="dom.html" style="background-color: #F7DF1E; color: #222;" data-id="1" data-description="Document Object Model">DOM</a>
     <section class="cards">
         <figure class="card">
             <img src="https://placeimg.com/200/200/tech" alt="techs">
