@@ -381,3 +381,31 @@ document.addEventListener('DOMContentLoaded', e => {
 	console.log(window.screenY)
 	console.log(e)
 })
+
+// 78. BOM: Métodos
+/*
+
+
+
+
+*/
+// window.alert('Alert')
+// window.confirm('Confirmación')
+// window.prompt('Aviso')
+// alert('jon')
+const $btnAbrir = document.getElementById('abrir-ventana'),
+	$btnCerrar = document.getElementById('cerrar-ventana'),
+	$btnImprimir = document.getElementsByTagName('imprimir-ventana')
+
+let ventana
+
+$btnAbrir.addEventListener('click', e => {
+	ventana = window.open('https://jonmircha.com')
+})
+$btnCerrar.addEventListener('click', e => {
+	// window.close()
+	ventana.close()
+})
+$btnImprimir.addEventListener('click', e => {
+	window.print()
+})
