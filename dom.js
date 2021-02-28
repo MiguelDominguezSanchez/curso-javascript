@@ -197,20 +197,47 @@ Posiciones:
     afterend(hermano siguiente)
 */
 
-const $cards = document.querySelector('.cards'),
-	$newCard = document.createElement('figure')
+// const $cards = document.querySelector('.cards'),
+// 	$newCard = document.createElement('figure')
 
-let $contentCard = `
-<img src="http://placeimg.com/200/200/any" alt="Any">
-<figcaption></figcaption>
-`
-$newCard.classList.add('card')
+// let $contentCard = `
+// <img src="http://placeimg.com/200/200/any" alt="Any">
+// <figcaption></figcaption>
+// `
+// $newCard.classList.add('card')
 
-$newCard.insertAdjacentHTML('beforeend', $contentCard)
-$newCard.querySelector('figcaption').insertAdjacentText('afterbegin', 'Any')
+// $newCard.insertAdjacentHTML('beforeend', $contentCard)
+// $newCard.querySelector('figcaption').insertAdjacentText('afterbegin', 'Any')
 // $cards.insertAdjacentElement('afterend', $newCard)
 
 // $cards.prepend($newCard)
 // $cards.append($newCard)
 // $cards.before($newCard)
 // $cards.after($newCard)
+
+// 72. DOM: Manejadores de Elementos
+// !not working
+
+function holaMundo() {
+	alert('Hola Mundo')
+	console.log(event)
+}
+
+const $eventoSemantico = document.getElementById('evento-semantico')
+$eventoSemantico = document.getElementById('evento-multiple')
+
+$eventoSemantico.onclick = holaMundo
+$eventoSemantico.onclick = function () {
+	alert('Hola Mundo manejador de Eventos Semántico')
+	console.log(e)
+	console.log(event)
+}
+
+$eventoMultiple.addEventListener('click', holaMundo)
+$eventoMultiple.addEventListener('click', e => {
+	alert('Hola Mundo manejador de Eventos Múltiple')
+	console.log(e)
+	console.log(e.type)
+	console.log(e.target)
+	console.log(event)
+})
