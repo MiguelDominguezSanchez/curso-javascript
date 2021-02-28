@@ -197,23 +197,23 @@ Posiciones:
     afterend(hermano siguiente)
 */
 
-// const $cards = document.querySelector('.cards'),
-// 	$newCard = document.createElement('figure')
+const $cards = document.querySelector('.cards'),
+	$newCard = document.createElement('figure')
 
-// let $contentCard = `
-// <img src="http://placeimg.com/200/200/any" alt="Any">
-// <figcaption></figcaption>
-// `
-// $newCard.classList.add('card')
+let $contentCard = `
+<img src="http://placeimg.com/200/200/any" alt="Any">
+<figcaption></figcaption>
+`
+$newCard.classList.add('card')
 
-// $newCard.insertAdjacentHTML('beforeend', $contentCard)
-// $newCard.querySelector('figcaption').insertAdjacentText('afterbegin', 'Any')
-// $cards.insertAdjacentElement('afterend', $newCard)
+$newCard.insertAdjacentHTML('beforeend', $contentCard)
+$newCard.querySelector('figcaption').insertAdjacentText('afterbegin', 'Any')
+$cards.insertAdjacentElement('afterend', $newCard)
 
-// $cards.prepend($newCard)
-// $cards.append($newCard)
-// $cards.before($newCard)
-// $cards.after($newCard)
+$cards.prepend($newCard)
+$cards.append($newCard)
+$cards.before($newCard)
+$cards.after($newCard)
 
 // 72. DOM: Manejadores de Elementos
 
@@ -268,16 +268,47 @@ $eventoMultiple.addEventListener('click', (e, event) => {
 // $eventoMultiple.addEventListener('click', function (event) {
 // 	saludar(event)
 // })
-$eventoMultiple.addEventListener('click', event => {
-	saludar(event)
-	saludar('Jon')
-})
+// $eventoMultiple.addEventListener('click', event => {
+// 	saludar(event)
+// 	saludar('Jon')
+// })
 
-const removerDobleClick = e => {
-	alert(`Removiendo el evento de tipo ${e.type}`)
-	console.log(e)
-	$eventoRemover.removeEventListener('dblclick', removerDobleClick)
-	$eventoRemover.disabled = true
+// const removerDobleClick = e => {
+// 	alert(`Removiendo el evento de tipo ${e.type}`)
+// 	console.log(e)
+// 	$eventoRemover.removeEventListener('dblclick', removerDobleClick)
+// 	$eventoRemover.disabled = true
+// }
+
+// $eventoRemover.addEventListener('dblclick', removerDobleClick)
+
+// 74. DOM: Flujo de Eventos (Burbuja y captura)
+
+/*
+
+
+
+
+
+*/
+const $divsEventos = document.querySelectorAll('.eventos-flujo div')
+
+function flujoEventos(e) {
+	console.log(
+		`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`
+	)
 }
 
-$eventoRemover.addEventListener('dblclick', removerDobleClick)
+console.log($divsEventos)
+
+$divsEventos.forEach(div => {
+	// Fase de burbúja
+	// div.addEventListener('click', flujoEventos)
+	// div.addEventListener('click', flujoEventos, false)
+	// Fase de captura
+	// div.addEventListener('click', flujoEventos, true)
+	div.addEventListener('click', flujoEventos, {
+		capture: false,
+		once: true,
+	})
+})
