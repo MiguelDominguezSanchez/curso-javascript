@@ -216,25 +216,41 @@ Posiciones:
 // $cards.after($newCard)
 
 // 72. DOM: Manejadores de Elementos
-// !not working
 
-function holaMundo() {
+/*
+
+// event deprecated
+<!-- pasar el evento explícitamente -->
+
+// in HTML
+<button onclick="holaMundo(event)">Evento con atributo HTML</button>
+
+// in javascript
+function holaMundo(event) { 
+      alert('Hola Mundo');
+      console.log(event);
+}
+
+
+
+*/
+function holaMundo(event) {
 	alert('Hola Mundo')
 	console.log(event)
 }
 
-const $eventoSemantico = document.getElementById('evento-semantico')
-$eventoSemantico = document.getElementById('evento-multiple')
+const $eventoSemantico = document.getElementById('evento-semantico'),
+	$eventoMultiple = document.getElementById('evento-multiple')
 
 $eventoSemantico.onclick = holaMundo
-$eventoSemantico.onclick = function () {
-	alert('Hola Mundo manejador de Eventos Semántico')
+$eventoSemantico.onclick = function (e, event) {
+	alert('Hola Mundo manejador de eventos Semántico')
 	console.log(e)
 	console.log(event)
 }
 
 $eventoMultiple.addEventListener('click', holaMundo)
-$eventoMultiple.addEventListener('click', e => {
+$eventoMultiple.addEventListener('click', (e, event) => {
 	alert('Hola Mundo manejador de Eventos Múltiple')
 	console.log(e)
 	console.log(e.type)
