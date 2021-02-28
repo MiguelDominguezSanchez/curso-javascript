@@ -167,17 +167,50 @@
 
 // 70. DOM: Modificando Elementos (Old Style)
 
-const $cards = document.querySelector('.cards'),
-	$newCard = document.createElement('figure'),
-	$cloneCards = $cards.cloneNode(true)
+// const $cards = document.querySelector('.cards'),
+// 	$newCard = document.createElement('figure'),
+// 	$cloneCards = $cards.cloneNode(true)
 
-$newCard.innerHTML = `
+// $newCard.innerHTML = `
+// <img src="http://placeimg.com/200/200/any" alt="Any">
+// <figcaption>Any</figcaption>
+// `
+// $newCard.classList.add('card')
+
+// // $cards.replaceChild($newCard, $cards.children[2])
+// $cards.removeChild($cards.lastElementChild)
+// // $cards.insertBefore($newCard, $cards.firstElementChild)
+// document.body.appendChild($cloneCards)
+
+// 71. DOM: Modificando ELementos (Cool Style)
+
+/*
+.insertAdjacent...
+    .insertAdjacentElement(position, el)
+    insertAdjacentHTML(position, html)
+    insertAdjacentText(position, text)
+
+Posiciones:
+    beforebegin(hermano anterior)
+    afterbegin(primer hijo)
+    beforeend(último hijo)
+    afterend(hermano siguiente)
+*/
+
+const $cards = document.querySelector('.cards'),
+	$newCard = document.createElement('figure')
+
+let $contentCard = `
 <img src="http://placeimg.com/200/200/any" alt="Any">
-<figcaption>Any</figcaption>
+<figcaption></figcaption>
 `
 $newCard.classList.add('card')
 
-// $cards.replaceChild($newCard, $cards.children[2])
-$cards.removeChild($cards.lastElementChild)
-// $cards.insertBefore($newCard, $cards.firstElementChild)
-document.body.appendChild($cloneCards)
+$newCard.insertAdjacentHTML('beforeend', $contentCard)
+$newCard.querySelector('figcaption').insertAdjacentText('afterbegin', 'Any')
+// $cards.insertAdjacentElement('afterend', $newCard)
+
+// $cards.prepend($newCard)
+// $cards.append($newCard)
+// $cards.before($newCard)
+// $cards.after($newCard)
