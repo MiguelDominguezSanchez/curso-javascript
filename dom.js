@@ -197,23 +197,23 @@ Posiciones:
     afterend(hermano siguiente)
 */
 
-const $cards = document.querySelector('.cards'),
-	$newCard = document.createElement('figure')
+// const $cards = document.querySelector('.cards'),
+// 	$newCard = document.createElement('figure')
 
-let $contentCard = `
-<img src="http://placeimg.com/200/200/any" alt="Any">
-<figcaption></figcaption>
-`
-$newCard.classList.add('card')
+// let $contentCard = `
+// <img src="http://placeimg.com/200/200/any" alt="Any">
+// <figcaption></figcaption>
+// `
+// $newCard.classList.add('card')
 
-$newCard.insertAdjacentHTML('beforeend', $contentCard)
-$newCard.querySelector('figcaption').insertAdjacentText('afterbegin', 'Any')
-$cards.insertAdjacentElement('afterend', $newCard)
+// $newCard.insertAdjacentHTML('beforeend', $contentCard)
+// $newCard.querySelector('figcaption').insertAdjacentText('afterbegin', 'Any')
+// $cards.insertAdjacentElement('afterend', $newCard)
 
-$cards.prepend($newCard)
-$cards.append($newCard)
-$cards.before($newCard)
-$cards.after($newCard)
+// $cards.prepend($newCard)
+// $cards.append($newCard)
+// $cards.before($newCard)
+// $cards.after($newCard)
 
 // 72. DOM: Manejadores de Elementos
 
@@ -234,37 +234,37 @@ function holaMundo(event) {
 
 
 */
-function holaMundo(event) {
-	alert('Hola Mundo')
-	console.log(event)
-}
+// function holaMundo(event) {
+// 	alert('Hola Mundo')
+// 	console.log(event)
+// }
 
 // 73. DOM: Eventos con Parámetros y Remover Eventos
 
-function saludar(nombre = Desconocido, event) {
-	alert(`Hola ${nombre}`)
-	console.log(event)
-}
+// function saludar(nombre = Desconocido, event) {
+// 	alert(`Hola ${nombre}`)
+// 	console.log(event)
+// }
 
-const $eventoSemantico = document.getElementById('evento-semantico'),
-	$eventoMultiple = document.getElementById('evento-multiple'),
-	$eventoRemover = document.getElementById('evento-remover')
+// const $eventoSemantico = document.getElementById('evento-semantico'),
+// 	$eventoMultiple = document.getElementById('evento-multiple'),
+// 	$eventoRemover = document.getElementById('evento-remover')
 
-$eventoSemantico.onclick = holaMundo
-$eventoSemantico.onclick = function (e, event) {
-	alert('Hola Mundo manejador de eventos Semántico')
-	console.log(e)
-	console.log(event)
-}
+// $eventoSemantico.onclick = holaMundo
+// $eventoSemantico.onclick = function (e, event) {
+// 	alert('Hola Mundo manejador de eventos Semántico')
+// 	console.log(e)
+// 	console.log(event)
+// }
 
-$eventoMultiple.addEventListener('click', holaMundo)
-$eventoMultiple.addEventListener('click', (e, event) => {
-	alert('Hola Mundo manejador de Eventos Múltiple')
-	console.log(e)
-	console.log(e.type)
-	console.log(e.target)
-	console.log(event)
-})
+// $eventoMultiple.addEventListener('click', holaMundo)
+// $eventoMultiple.addEventListener('click', (e, event) => {
+// 	alert('Hola Mundo manejador de Eventos Múltiple')
+// 	console.log(e)
+// 	console.log(e.type)
+// 	console.log(e.target)
+// 	console.log(event)
+// })
 // $eventoMultiple.addEventListener('click', function (event) {
 // 	saludar(event)
 // })
@@ -291,20 +291,20 @@ $eventoMultiple.addEventListener('click', (e, event) => {
 
 
 */
-const $divsEventos = document.querySelectorAll('.eventos-flujo div')
-$linkEventos = document.querySelector('.eventos-flujo a')
+// const $divsEventos = document.querySelectorAll('.eventos-flujo div')
+// $linkEventos = document.querySelector('.eventos-flujo a')
 
-function flujoEventos(e) {
-	// console.log(
-	// 	`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`
-	// )
-	console.log(
-		`Hola te saluda ${this}, el click lo originó ${e.target.className}`
-	)
-	// e.stopPropagation()
-}
+// function flujoEventos(e) {
+// 	// console.log(
+// 	// 	`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`
+// 	// )
+// 	console.log(
+// 		`Hola te saluda ${this}, el click lo originó ${e.target.className}`
+// 	)
+// 	// e.stopPropagation()
+// }
 
-console.log($divsEventos)
+// console.log($divsEventos)
 
 // $divsEventos.forEach(div => {
 // 	// Fase de burbúja
@@ -327,18 +327,18 @@ console.log($divsEventos)
 
 // 75. DOM: Delegacción y eventos
 
-document.addEventListener('click', e => {
-	console.log('Click en', e.target)
+// document.addEventListener('click', e => {
+// 	console.log('Click en', e.target)
 
-	if (e.target.matches('.eventos-flujo div')) {
-		flujoEventos(e)
-	}
+// 	if (e.target.matches('.eventos-flujo div')) {
+// 		flujoEventos(e)
+// 	}
 
-	if (e.target.matches('.eventos-flujo a')) {
-		alert('Hola soy tu amigo y docente digital...Jonathan Mircha')
-		e.preventDefault()
-	}
-})
+// 	if (e.target.matches('.eventos-flujo a')) {
+// 		alert('Hola soy tu amigo y docente digital...Jonathan Mircha')
+// 		e.preventDefault()
+// 	}
+// })
 
 // $divsEventos.forEach(div => {
 // 	div.addEventListener('click', flujoEventos)
@@ -346,41 +346,41 @@ document.addEventListener('click', e => {
 
 // 77. BOM: Propiedades y Eventos
 
-window.addEventListener('resize', e => {
-	console.clear()
-	console.log('**********Evento Resize*********')
-	console.log(window.innerWidth)
-	console.log(window.innerHeight)
-	console.log(window.outerWidth)
-	console.log(window.outerHeight)
-	console.log(e)
-})
+// window.addEventListener('resize', e => {
+// 	console.clear()
+// 	console.log('**********Evento Resize*********')
+// 	console.log(window.innerWidth)
+// 	console.log(window.innerHeight)
+// 	console.log(window.outerWidth)
+// 	console.log(window.outerHeight)
+// 	console.log(e)
+// })
 
-window.addEventListener('scroll', e => {
-	console.clear()
-	console.log('*********Evento Scroll*************')
-	console.log(window.scrollX)
-	console.log(window.scrollY)
-	console.log(e)
-})
+// window.addEventListener('scroll', e => {
+// 	console.clear()
+// 	console.log('*********Evento Scroll*************')
+// 	console.log(window.scrollX)
+// 	console.log(window.scrollY)
+// 	console.log(e)
+// })
 
-window.addEventListener('load', e => {
-	console.log('*********Evento Load*************')
-	console.log(window.screenX)
-	console.log(window.screenY)
-	console.log(e)
-})
+// window.addEventListener('load', e => {
+// 	console.log('*********Evento Load*************')
+// 	console.log(window.screenX)
+// 	console.log(window.screenY)
+// 	console.log(e)
+// })
 
 // 4(window).load()
 // $(document).ready(funcion)
 // $(window).on('load', funcion)
 
-document.addEventListener('DOMContentLoaded', e => {
-	console.log('*********Evento DOMContentLoaded*************')
-	console.log(window.screenX)
-	console.log(window.screenY)
-	console.log(e)
-})
+// document.addEventListener('DOMContentLoaded', e => {
+// 	console.log('*********Evento DOMContentLoaded*************')
+// 	console.log(window.screenX)
+// 	console.log(window.screenY)
+// 	console.log(e)
+// })
 
 // 78. BOM: Métodos
 /*
@@ -393,19 +393,61 @@ document.addEventListener('DOMContentLoaded', e => {
 // window.confirm('Confirmación')
 // window.prompt('Aviso')
 // alert('jon')
-const $btnAbrir = document.getElementById('abrir-ventana'),
-	$btnCerrar = document.getElementById('cerrar-ventana'),
-	$btnImprimir = document.getElementsByTagName('imprimir-ventana')
+// const $btnAbrir = document.getElementById('abrir-ventana'),
+// 	$btnCerrar = document.getElementById('cerrar-ventana'),
+// 	$btnImprimir = document.getElementsByTagName('imprimir-ventana')
 
-let ventana
+// let ventana
 
-$btnAbrir.addEventListener('click', e => {
-	ventana = window.open('https://jonmircha.com')
-})
-$btnCerrar.addEventListener('click', e => {
-	// window.close()
-	ventana.close()
-})
-$btnImprimir.addEventListener('click', e => {
-	window.print()
-})
+// $btnAbrir.addEventListener('click', e => {
+// 	ventana = window.open('https://jonmircha.com')
+// })
+// $btnCerrar.addEventListener('click', e => {
+// 	// window.close()
+// 	ventana.close()
+// })
+// $btnImprimir.addEventListener('click', e => {
+// 	window.print()
+// })
+
+// 79. BOM: Objetos: URL, Historia y Navegar
+/*
+
+
+
+
+*/
+console.clear()
+// console.log('*************Objeto URL (location)*************')
+// console.log(location)
+// console.log(location.origin)
+// console.log(location.protocol)
+// console.log(location.host)
+// console.log(location.hostname)
+// console.log(location.port)
+// console.log(location.href)
+// console.log(location.hash)
+// console.log(location.search)
+// console.log(location.pathname)
+// location.reload()
+
+// console.log('*****************Objeto Historial (history)******************')
+// console.log(history)
+// console.log(history.length)
+// console.log(history)
+// console.log(history.length)
+// history.forward(1)
+// history.go(-3)
+// history.back(2)
+
+// console.log('***************Objeto Navegador (navigator)****************')
+// console.log(navigator)
+// console.log(navigator.connection)
+// console.log(navigator.geolocation)
+// console.log(navigator.mediaDevice)
+// console.log(navigator.mimeTypes)
+// console.log(navigator.onLine)
+// console.log(navigator.serviceWorker)
+// console.log(navigator.storage)
+// console.log(navigator.usb)
+// console.log(navigator.userAgent)
